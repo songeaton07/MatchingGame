@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* Adjust the number of columns and size as needed */
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.gameTile {
+    width: 100px;   /* Set the width of each tile */
+    height: 100px;  /* Set the height of each tile */
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    overflow: hidden; /* Ensures that the images do not overflow the boundaries of the tile */
+}
+
+.gameTile img {
+    width: 100%;  /* Ensures the image covers the width of the tile */
+    height: 100%; /* Ensures the image covers the height of the tile */
+    object-fit: cover; /* Ensures the image covers the tile without distorting */
+    transition: transform 0.3s ease; /* Smooth transformation for any interaction */
+}
+
+.gameTile:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.gameTile:active img {
+    transform: scale(0.9); /* Slight shrink effect when clicked */
+}
